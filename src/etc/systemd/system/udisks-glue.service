@@ -1,0 +1,14 @@
+[Unit]
+Description=udisks-glue automounter for normal users authorized by polkit
+# This fails :
+#Requires=udisks
+
+[Service]
+User=pi
+Group=sambashare
+# -f means foreground ; lets systemd grab the stdout logs.
+ExecStart=/usr/bin/udisks-glue -f
+
+[Install]
+WantedBy=multi-user.target
+
