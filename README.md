@@ -1,6 +1,6 @@
 # Share pluggable disks with udisks-glue on Samba
 
-These scripts help having rSsamba shares on removable drives. This HOWTO should
+These scripts help having Samba shares on removable drives. This HOWTO should
 fit with any Raspberry Pi, although any modern linux should do the trick. You
 will need the `samba` and `udisks-glue` packages. Indeed all commands beginning
 with a `#` should be executed as the root user. So, begin with :
