@@ -4,11 +4,7 @@
 import os
 import sys
 import subprocess
-#import cgi
 
-
-#ejecter = "/cgi-bin/ejecter.py"
-#ejecter = sys.argv[0]
 
 print("Content-Type: text/html\n\n")
 
@@ -26,6 +22,7 @@ if "QUERY_STRING" in os.environ:
                     [ string.split("=") for string in query.split("&") ]
     }
     if "eject" in arguments:
+        # Eject drive holding partition :
         if arguments["eject"] in os.listdir(media_dir):
             eject_command = "sudo -u pi eject /media/%s" % arguments["eject"]
             print("executing command <code>%s</code> :" % eject_command)
