@@ -1,0 +1,2 @@
+# Allow www-data to run 'eject' as user pi for ALL hosts without password :
+www-data	ALL=(pi) NOPASSWD: /usr/bin/eject
