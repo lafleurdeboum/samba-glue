@@ -28,6 +28,11 @@ You'll also need to add him in and give it a password :
 Last word, how do you get things unmounted ? Well the simplest option is to turn
 the server off. But you could also use `lighttpd` with mod_cgi enabled, and the
 admin script in `src/usr/lib/cgi-bin/drives.py`. For this to work, you'll need a
-special sudo rule to let user `www-data` use `eject` _on behalf_ of user `pi`.
-I haven't found the way to have it separated from my sudoers file, coming soon !
+special sudo rule to let user `www-data` use `eject` on behalf of user `pi`. You will
+find the needed files in `src` :
+
+    /etc/lighttpd/conf-available/10-cgi.conf
+    /etc/lighttpd/conf-enabled/10-cgi.conf
+    /usr/lib/cgi-bin/drives.py
+    /etc/sudoers.d/011_www-data-eject
 
