@@ -16,14 +16,16 @@ Then you will have to autostart udisks-glue for the user specified in smb.conf.
 An option is to make a systemd service file ; see the one included in `src`. You
 would just need to enable it with
 
-    # systemctl enable udisks-glue.service
+    # systemctl enable samba-glue.service
 
 Finally you need a samba share on /media. You could use the smb.conf example in
 `src`. It only lets user `samba` access to the shares _on behalf_ of user `pi`.
 You'll also need to add him in and give it a password :
 
     # useradd -s /bin/false -d /dev/null -g sambashare samba
-    # pdbedit -a samba
+    # smbpasswd -a samba
+
+All this is summed up in the `install-samba-glue.sh` script.
 
 Last word, how do you get things unmounted ? Well the simplest option is to turn
 the server off. But you could also use `lighttpd` with mod_cgi enabled, and the
